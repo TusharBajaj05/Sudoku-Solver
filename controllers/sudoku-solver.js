@@ -91,7 +91,7 @@ class SudokuSolver {
       col = 0;
     }
 
-    // Check if the current position of the grid already\ contains value >0, we iterate
+    // Check if the current position of the grid already contains value >0, we iterate
     // for next column
     if (grid[row][col] != 0)
       return this.solveSudoku(grid, row, col + 1);
