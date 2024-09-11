@@ -31,7 +31,6 @@ module.exports = function (app) {
         res.json({error: 'Expected puzzle to be 81 characters long'})
         return
       }
-      console.log(value)
       
       if(/[^0-9.]/g.test(puzzle)) {
         res.json({error: 'Invalid characters in puzzle'});
@@ -81,8 +80,6 @@ module.exports = function (app) {
       }
 
       let solvedPuzzle = solver.solve(puzzle)
-
-      console.log(solvedPuzzle)
 
       if(!solvedPuzzle) {
         res.json({ error: 'Puzzle cannot be solved' })

@@ -37,6 +37,9 @@ class SudokuSolver {
     let grid = this.transformPuzzle(puzzleString);
     row = this.letterToNumber(row);
 
+    if(grid[row-1][column-1] == value)
+      return true;
+
     if(grid[row-1][column-1] !== 0)
       return false;
 
@@ -51,6 +54,9 @@ class SudokuSolver {
     let grid = this.transformPuzzle(puzzleString);
     row = this.letterToNumber(row);
 
+    if(grid[row-1][column-1] == value)
+      return true;
+
     if(grid[row-1][column-1] !== 0)
       return false;
 
@@ -64,6 +70,9 @@ class SudokuSolver {
   checkRegionPlacement(puzzleString, row, column, value) {
     let grid = this.transformPuzzle(puzzleString);
     row = this.letterToNumber(row);
+
+    if(grid[row-1][column-1] == value)
+      return true;
 
     if(grid[row - 1][column - 1] !== 0)
       return false
