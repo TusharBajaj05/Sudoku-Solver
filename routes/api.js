@@ -22,14 +22,17 @@ module.exports = function (app) {
         res.json({error: 'Invalid coordinate'})
       }
 
-      if(!/[1-9]/i.test(value)) {
+      if(!/^[1-9]$/.test(value)) {
         res.json({error: 'Invalid value'})
         return
       }
+
       if(puzzle.length != 81) {
         res.json({error: 'Expected puzzle to be 81 characters long'})
         return
       }
+      console.log(value)
+      
       if(/[^0-9.]/g.test(puzzle)) {
         res.json({error: 'Invalid characters in puzzle'});
         return
